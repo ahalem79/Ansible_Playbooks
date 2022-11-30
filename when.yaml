@@ -24,5 +24,17 @@
     command: /sbin/shutdown -t now
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6") or
           (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_major_version'] == "7")
+---
+# Loop feature will be removed in version 2.11
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Install list of packages
+     package:
+      name: ['nano', 'wget', 'vim', 'zip', 'unzip']
+     when: ("ansible_distribution" == "Ubuntu")
+
+
 
 #https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
