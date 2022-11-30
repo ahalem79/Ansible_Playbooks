@@ -6,6 +6,6 @@
   - name: vars demo
     debug:
       msg: "{{name}}"
-  - name: demo vars2
+  - name: vars demo2
     debug:
       msg: "{{password}}"
