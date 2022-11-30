@@ -1,7 +1,11 @@
 - hosts: dbservers
   vars:
     name: From Playbook
+    password: Multi11#
   tasks:
   - name: vars demo
     debug:
       msg: "{{name}}"
+  - name: demo vars2
+    debug:
+      msg: "{{password}}"
